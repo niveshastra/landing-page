@@ -27,6 +27,7 @@
   --text-muted:#7c8aab;
   --text-faint:#4a5578;
   --font-display:'Inter',-apple-system,sans-serif;
+  --font-heading:'Plus Jakarta Sans','Inter',sans-serif;
   --font-mono:'JetBrains Mono',ui-monospace,monospace;
   --font-mockup:'Plus Jakarta Sans',sans-serif;
   --radius-sm:8px;
@@ -966,9 +967,11 @@ body{
   }
 }
 
-/* Mockups use Plus Jakarta Sans throughout to match the live dashboard */
+/* Mockups + hero dashboard use Plus Jakarta Sans throughout to match the live dashboard */
 .mockup-card,
-.mockup-card *{
+.mockup-card *,
+.hero-widget,
+.hero-widget *{
   font-family:var(--font-mockup) !important;
 }
 
@@ -1471,7 +1474,8 @@ body{
       <span class="hawk-preset">Morning Star ▾</span>
       <div style="display:flex; align-items:center; gap:10px;">
         <div class="ai-badge">● Live · NSE · 26 Jun 2026</div>
-        <span class="hawk-tool-btn">Modify ▾</span>
+        <span class="hawk-tool-btn">+ Add Apps</span>
+        <span class="hawk-tool-btn">Done</span>
         <span class="hawk-tool-btn">↻ Refresh</span>
       </div>
     </div>
@@ -1508,6 +1512,23 @@ body{
             </div>
           </div>
           <div class="hdisc-note">Discipline signals shape your MSTP coaching focus — stops, holding period, consistency.</div>
+        </div>
+        <div class="hpanel">
+          <div class="hpanel-title">FII / DII Flows <span class="hpanel-tag">Thu, 25 Jun</span></div>
+          <div class="hdisc-grid" style="margin-bottom:0;">
+            <div class="hdisc-cell">
+              <div class="hdisc-l">FII Cash</div>
+              <div class="hdisc-v pos-green">+₹383 Cr</div>
+            </div>
+            <div class="hdisc-cell">
+              <div class="hdisc-l">DII Cash</div>
+              <div class="hdisc-v pos-green">+₹5,747 Cr</div>
+            </div>
+          </div>
+          <div style="margin-top:10px; border-top:1px solid var(--border); padding-top:10px; display:flex; justify-content:space-between; align-items:center;">
+            <span class="hdisc-l" style="margin-bottom:0;">Net Institutional Flow</span>
+            <span class="hdisc-v pos-green" style="font-size:16px;">+₹6,130 Cr</span>
+          </div>
         </div>
       </div>
 
@@ -1634,14 +1655,6 @@ body{
           <div class="hpanel-title">Open Positions</div>
           <div class="hlist">
             <div class="hlist-row">
-              <span class="hlist-sym">AZAD</span>
-              <span class="hlist-right"><span class="hlist-pct pos-red">−9.4%</span><span class="hlist-val">₹29.44L</span></span>
-            </div>
-            <div class="hlist-row">
-              <span class="hlist-sym">EPACKPEB</span>
-              <span class="hlist-right"><span class="hlist-pct pos-red">−3.4%</span><span class="hlist-val">₹8.82L</span></span>
-            </div>
-            <div class="hlist-row">
               <span class="hlist-sym">MANORAMA</span>
               <span class="hlist-right"><span class="hlist-pct pos-green">+9.8%</span><span class="hlist-val">₹40.26L</span></span>
             </div>
@@ -1652,6 +1665,18 @@ body{
             <div class="hlist-row">
               <span class="hlist-sym">THERMAX</span>
               <span class="hlist-right"><span class="hlist-pct pos-red">−0.1%</span><span class="hlist-val">₹15.48L</span></span>
+            </div>
+            <div class="hlist-row">
+              <span class="hlist-sym">PRECWIRE</span>
+              <span class="hlist-right"><span class="hlist-pct pos-green">+1.5%</span><span class="hlist-val">₹14.11L</span></span>
+            </div>
+            <div class="hlist-row">
+              <span class="hlist-sym">VIDYAWIRES</span>
+              <span class="hlist-right"><span class="hlist-pct pos-red">−3.4%</span><span class="hlist-val">₹12.13L</span></span>
+            </div>
+            <div class="hlist-row">
+              <span class="hlist-sym">HSCL</span>
+              <span class="hlist-right"><span class="hlist-pct pos-green">+1.7%</span><span class="hlist-val">₹32.19L</span></span>
             </div>
           </div>
         </div>
@@ -1677,6 +1702,14 @@ body{
             <div class="hlist-row">
               <span class="hlist-sym">BSE</span>
               <span class="hlist-right"><span class="hlist-pct pos-red">−1.4%</span><span class="hlist-date">19 Jun</span></span>
+            </div>
+            <div class="hlist-row">
+              <span class="hlist-sym">PARAS</span>
+              <span class="hlist-right"><span class="hlist-pct pos-green">+34.0%</span><span class="hlist-date">17 Jun</span></span>
+            </div>
+            <div class="hlist-row">
+              <span class="hlist-sym">KIRLPNU</span>
+              <span class="hlist-right"><span class="hlist-pct pos-green">+10.1%</span><span class="hlist-date">17 Jun</span></span>
             </div>
           </div>
         </div>
@@ -1768,9 +1801,9 @@ body{
                     <stop offset="100%" stop-color="#2ed8a0"/>
                   </linearGradient>
                 </defs>
-                <text x="20" y="148" font-family="JetBrains Mono" font-size="11" fill="#4a5578">0</text>
-                <text x="120" y="20" font-family="JetBrains Mono" font-size="11" fill="#4a5578" text-anchor="middle">50</text>
-                <text x="212" y="148" font-family="JetBrains Mono" font-size="11" fill="#4a5578" text-anchor="end">100</text>
+                <text x="20" y="148" font-family="Plus Jakarta Sans" font-size="11" fill="#4a5578">0</text>
+                <text x="120" y="20" font-family="Plus Jakarta Sans" font-size="11" fill="#4a5578" text-anchor="middle">50</text>
+                <text x="212" y="148" font-family="Plus Jakarta Sans" font-size="11" fill="#4a5578" text-anchor="end">100</text>
               </svg>
               <div class="hscore-value"><span class="feat-score-num">0</span><span class="of100">/100</span></div>
               <div class="hscore-label">Bullish</div>
