@@ -300,11 +300,11 @@ body{
   position:relative;
   z-index:1;
   width:100%;
-  max-width:920px;
+  max-width:1060px;
   background:linear-gradient(180deg, var(--bg-elevated) 0%, #0a0e1c 100%);
   border:1px solid var(--border);
   border-radius:var(--radius-lg);
-  padding:32px;
+  padding:28px;
   box-shadow:0 30px 90px -30px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.02) inset;
   opacity:0;
   animation:fadeUp 1s ease 0.4s forwards;
@@ -353,6 +353,217 @@ body{
   color:var(--text-muted);
   letter-spacing:1px;
 }
+
+/* ===== HAWK EYE MULTI-PANEL DASHBOARD ===== */
+.hawk-grid{
+  display:grid;
+  grid-template-columns:1.15fr 1.35fr;
+  gap:14px;
+}
+.hawk-grid-bottom{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+  margin-top:14px;
+}
+@media (max-width:820px){
+  .hawk-grid{grid-template-columns:1fr;}
+}
+
+.hpanel{
+  background:rgba(255,255,255,0.018);
+  border:1px solid var(--border);
+  border-radius:var(--radius-md);
+  padding:16px 18px;
+}
+.hpanel-title{
+  font-family:var(--font-mono);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  margin-bottom:14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.hpanel-tag{
+  font-family:var(--font-mono);
+  font-size:9px;
+  padding:3px 9px;
+  border-radius:100px;
+  border:1px solid rgba(99,102,241,0.3);
+  color:var(--accent-violet-bright);
+  letter-spacing:0.5px;
+}
+
+/* Market Score panel */
+.hscore-row{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:20px;
+  align-items:center;
+}
+.hscore-gauge-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-width:150px;
+}
+.hscore-svg{width:150px;}
+.hscore-value{
+  font-family:var(--font-mono);
+  font-size:38px;
+  font-weight:700;
+  margin-top:-42px;
+  letter-spacing:-1px;
+  color:var(--text-primary);
+}
+.hscore-value .of100{font-size:15px; color:var(--text-faint); font-weight:500;}
+.hscore-label{
+  font-family:var(--font-mono);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--accent-green);
+  margin-top:4px;
+}
+.hscore-subs{
+  display:flex;
+  gap:10px;
+  margin-top:14px;
+}
+.hscore-sub{
+  text-align:center;
+  padding:8px 12px;
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  flex:1;
+}
+.hscore-sub-l{
+  font-family:var(--font-mono);
+  font-size:8px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--text-faint);
+  margin-bottom:3px;
+}
+.hscore-sub-v{
+  font-family:var(--font-mono);
+  font-size:17px;
+  font-weight:700;
+  color:var(--text-primary);
+}
+
+/* compact indicator list inside market score */
+.hind-list{display:flex; flex-direction:column; gap:7px;}
+.hind-group{
+  font-family:var(--font-mono);
+  font-size:8px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--text-faint);
+  margin-top:4px;
+}
+.hind-group:first-child{margin-top:0;}
+.hind-row{
+  display:grid;
+  grid-template-columns:96px 1fr 26px;
+  align-items:center;
+  gap:10px;
+}
+.hind-name{font-size:11px; color:var(--text-secondary);}
+.hind-track{height:5px; border-radius:3px; background:var(--surface-2); overflow:hidden;}
+.hind-fill{height:100%; border-radius:3px; width:0%; transition:width 1.3s cubic-bezier(.16,1,.3,1);}
+.hind-val{font-family:var(--font-mono); font-size:11px; font-weight:600; text-align:right;}
+
+/* Market Breadth panel */
+.hbreadth-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-bottom:14px;
+}
+.hbreadth-cell{
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:11px 13px;
+  background:rgba(255,255,255,0.012);
+}
+.hbreadth-l{
+  font-family:var(--font-mono);
+  font-size:8px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--text-faint);
+  margin-bottom:5px;
+}
+.hbreadth-v{font-family:var(--font-mono); font-size:22px; font-weight:700;}
+.hbreadth-bar-row{margin-top:4px;}
+.hbreadth-bar-label{
+  display:flex; justify-content:space-between;
+  font-family:var(--font-mono); font-size:9px; color:var(--text-muted);
+  margin-bottom:5px;
+}
+.hbreadth-bar-track{height:6px; border-radius:3px; background:var(--surface-2); overflow:hidden; margin-bottom:11px;}
+.hbreadth-bar-fill{height:100%; border-radius:3px; width:0%; transition:width 1.4s cubic-bezier(.16,1,.3,1);}
+
+/* Portfolio snapshot panel */
+.hport-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+.hport-cell{
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:11px 13px;
+  background:rgba(255,255,255,0.012);
+}
+.hport-l{
+  font-family:var(--font-mono);
+  font-size:8px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--text-faint);
+  margin-bottom:5px;
+}
+.hport-v{font-family:var(--font-mono); font-size:18px; font-weight:700; color:var(--text-primary);}
+.hport-sub{font-size:9px; color:var(--text-faint); margin-top:2px;}
+
+/* Sector heatmap strip */
+.hheat-grid{
+  display:grid;
+  grid-template-columns:repeat(8, 1fr);
+  gap:6px;
+}
+@media (max-width:820px){
+  .hheat-grid{grid-template-columns:repeat(4, 1fr);}
+}
+.hheat-cell{
+  border-radius:var(--radius-sm);
+  padding:9px 8px;
+  border:1px solid rgba(255,255,255,0.06);
+}
+.hheat-name{
+  font-family:var(--font-mono);
+  font-size:8px;
+  font-weight:600;
+  letter-spacing:0.3px;
+  color:rgba(255,255,255,0.92);
+  margin-bottom:3px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.hheat-val{
+  font-family:var(--font-mono);
+  font-size:15px;
+  font-weight:700;
+  color:#fff;
+}
+
+.pos-green{color:var(--accent-green);}
+.pos-red{color:var(--accent-rose);}
+.pos-amber{color:var(--accent-amber);}
 
 .gauge-row{
   display:grid;
@@ -1128,88 +1339,171 @@ body{
     </div>
   </div>
 
-  <!-- Signature Gauge Widget -->
+  <!-- Signature Hawk Eye Dashboard -->
   <div class="hero-widget">
     <div class="widget-header">
       <div class="widget-title">
-        Market Score · Nifty 500 Universe
+        Hawk Eye · Command Centre
       </div>
       <div style="display:flex; align-items:center; gap:14px;">
-        <div class="ai-badge">● AI Powered</div>
-        <div class="widget-meta">500 stocks processed<br>Updated 10 Jun 2026</div>
+        <div class="ai-badge">● Live · NSE</div>
+        <div class="widget-meta">Nifty 500 Universe<br>Updated 26 Jun 2026</div>
       </div>
     </div>
-    <div class="gauge-row">
-      <div class="gauge-wrap">
-        <svg class="gauge-svg" viewBox="0 0 240 150" id="gaugeSvg">
-          <!-- background arc -->
-          <path d="M 20 130 A 100 100 0 0 1 220 130" fill="none" stroke="#1a2138" stroke-width="14" stroke-linecap="round"/>
-          <!-- gradient arc (animated) -->
-          <path id="gaugeArc" d="M 20 130 A 100 100 0 0 1 220 130" fill="none" stroke="url(#gaugeGrad)" stroke-width="14" stroke-linecap="round"
-                stroke-dasharray="314" stroke-dashoffset="314"/>
-          <defs>
-            <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#f43f5e"/>
-              <stop offset="50%" stop-color="#f59e0b"/>
-              <stop offset="100%" stop-color="#2dd4bf"/>
-            </linearGradient>
-          </defs>
-          <text x="20" y="148" font-family="JetBrains Mono" font-size="11" fill="#4a5578">0</text>
-          <text x="120" y="20" font-family="JetBrains Mono" font-size="11" fill="#4a5578" text-anchor="middle">50</text>
-          <text x="212" y="148" font-family="JetBrains Mono" font-size="11" fill="#4a5578" text-anchor="end">100</text>
-        </svg>
-        <div class="gauge-value"><span id="gaugeNum">0</span><span class="of100">/100</span></div>
-        <div class="gauge-label">Cautious</div>
-        <div class="gauge-sublabels">
-          <div class="gauge-sub">
-            <div class="gauge-sub-label">Regime</div>
-            <div class="gauge-sub-value">40</div>
-            <div class="gauge-sub-caption">slow · ceiling</div>
+
+    <div class="hawk-grid">
+      <!-- Market Score panel -->
+      <div class="hpanel">
+        <div class="hpanel-title">Market Score <span class="hpanel-tag">Multi-Indicator</span></div>
+        <div class="hscore-row">
+          <div class="hscore-gauge-wrap">
+            <svg class="hscore-svg" viewBox="0 0 240 150">
+              <path d="M 20 130 A 100 100 0 0 1 220 130" fill="none" stroke="#1a2138" stroke-width="14" stroke-linecap="round"/>
+              <path id="heroScoreArc" d="M 20 130 A 100 100 0 0 1 220 130" fill="none" stroke="url(#heroScoreGrad)" stroke-width="14" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="314"/>
+              <defs>
+                <linearGradient id="heroScoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#f43f5e"/>
+                  <stop offset="50%" stop-color="#f59e0b"/>
+                  <stop offset="100%" stop-color="#2ed8a0"/>
+                </linearGradient>
+              </defs>
+              <text x="20" y="148" font-family="JetBrains Mono" font-size="11" fill="#4a5578">0</text>
+              <text x="120" y="20" font-family="JetBrains Mono" font-size="11" fill="#4a5578" text-anchor="middle">50</text>
+              <text x="212" y="148" font-family="JetBrains Mono" font-size="11" fill="#4a5578" text-anchor="end">100</text>
+            </svg>
+            <div class="hscore-value"><span id="heroScoreNum">0</span><span class="of100">/100</span></div>
+            <div class="hscore-label">Bullish</div>
+            <div class="hscore-subs">
+              <div class="hscore-sub">
+                <div class="hscore-sub-l">Regime</div>
+                <div class="hscore-sub-v">71</div>
+              </div>
+              <div class="hscore-sub">
+                <div class="hscore-sub-l">Tactical</div>
+                <div class="hscore-sub-v">52</div>
+              </div>
+            </div>
           </div>
-          <div class="gauge-sub">
-            <div class="gauge-sub-label">Tactical</div>
-            <div class="gauge-sub-value">26</div>
-            <div class="gauge-sub-caption">fast · timing</div>
+          <div class="hind-list">
+            <div class="hind-group">Regime · Slow</div>
+            <div class="hind-row">
+              <div class="hind-name">200 EMA breadth</div>
+              <div class="hind-track"><div class="hind-fill" data-pct="57" data-color="green"></div></div>
+              <div class="hind-val pos-green">57</div>
+            </div>
+            <div class="hind-row">
+              <div class="hind-name">Key-index trend</div>
+              <div class="hind-track"><div class="hind-fill" data-pct="89" data-color="green"></div></div>
+              <div class="hind-val pos-green">89</div>
+            </div>
+            <div class="hind-row">
+              <div class="hind-name">50 EMA breadth</div>
+              <div class="hind-track"><div class="hind-fill" data-pct="66" data-color="green"></div></div>
+              <div class="hind-val pos-green">66</div>
+            </div>
+            <div class="hind-group">Tactical · Fast</div>
+            <div class="hind-row">
+              <div class="hind-name">21 EMA breadth</div>
+              <div class="hind-track"><div class="hind-fill" data-pct="62" data-color="green"></div></div>
+              <div class="hind-val pos-green">62</div>
+            </div>
+            <div class="hind-row">
+              <div class="hind-name">Advance / Decline</div>
+              <div class="hind-track"><div class="hind-fill" data-pct="35" data-color="red"></div></div>
+              <div class="hind-val pos-red">35</div>
+            </div>
+            <div class="hind-row">
+              <div class="hind-name">52-week H / L</div>
+              <div class="hind-track"><div class="hind-fill" data-pct="78" data-color="green"></div></div>
+              <div class="hind-val pos-green">78</div>
+            </div>
+            <div class="hind-row">
+              <div class="hind-name">FII / DII flow</div>
+              <div class="hind-track"><div class="hind-fill" data-pct="50" data-color="amber"></div></div>
+              <div class="hind-val pos-amber">50</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="indicator-list">
-        <div class="indicator-group-label">Regime · Slow</div>
-        <div class="indicator-row">
-          <div class="indicator-name">200 EMA breadth</div>
-          <div class="indicator-bar-track"><div class="indicator-bar-fill" data-pct="44"></div></div>
-          <div class="indicator-value">44</div>
+
+      <!-- Right column: Breadth + Portfolio -->
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div class="hpanel">
+          <div class="hpanel-title">Market Breadth <span class="hpanel-tag">Today</span></div>
+          <div class="hbreadth-grid">
+            <div class="hbreadth-cell">
+              <div class="hbreadth-l">Advancing</div>
+              <div class="hbreadth-v pos-green">174</div>
+            </div>
+            <div class="hbreadth-cell">
+              <div class="hbreadth-l">Declining</div>
+              <div class="hbreadth-v pos-red">325</div>
+            </div>
+            <div class="hbreadth-cell">
+              <div class="hbreadth-l">52W Highs</div>
+              <div class="hbreadth-v pos-green">68</div>
+            </div>
+            <div class="hbreadth-cell">
+              <div class="hbreadth-l">52W Lows</div>
+              <div class="hbreadth-v pos-red">19</div>
+            </div>
+          </div>
+          <div class="hbreadth-bar-row">
+            <div class="hbreadth-bar-label"><span>Advance / Decline</span><span>35%</span></div>
+            <div class="hbreadth-bar-track"><div class="hbreadth-bar-fill" data-pct="35" data-color="red"></div></div>
+            <div class="hbreadth-bar-label"><span>% above 21 EMA</span><span>62%</span></div>
+            <div class="hbreadth-bar-track"><div class="hbreadth-bar-fill" data-pct="62" data-color="green"></div></div>
+          </div>
         </div>
-        <div class="indicator-row">
-          <div class="indicator-name">Key-index trend</div>
-          <div class="indicator-bar-track"><div class="indicator-bar-fill" data-pct="34"></div></div>
-          <div class="indicator-value">34</div>
+
+        <div class="hpanel">
+          <div class="hpanel-title">Portfolio Snapshot <span class="hpanel-tag">Live P&L</span></div>
+          <div class="hport-grid">
+            <div class="hport-cell">
+              <div class="hport-l">Invested</div>
+              <div class="hport-v">₹1.92Cr</div>
+              <div class="hport-sub">218.7% of capital</div>
+            </div>
+            <div class="hport-cell">
+              <div class="hport-l">Open P&L</div>
+              <div class="hport-v pos-green">+₹54,539</div>
+              <div class="hport-sub">+0.3% on deployed</div>
+            </div>
+            <div class="hport-cell">
+              <div class="hport-l">Realised P&L</div>
+              <div class="hport-v pos-green">+₹31.42L</div>
+              <div class="hport-sub">FY26 · 61% win rate</div>
+            </div>
+            <div class="hport-cell">
+              <div class="hport-l">Profit Factor</div>
+              <div class="hport-v">5.84×</div>
+              <div class="hport-sub">gross win / loss</div>
+            </div>
+          </div>
         </div>
-        <div class="indicator-row">
-          <div class="indicator-name">50 EMA breadth</div>
-          <div class="indicator-bar-track"><div class="indicator-bar-fill" data-pct="42"></div></div>
-          <div class="indicator-value">42</div>
-        </div>
-        <div class="indicator-group-label">Tactical · Fast</div>
-        <div class="indicator-row">
-          <div class="indicator-name">21 EMA breadth</div>
-          <div class="indicator-bar-track"><div class="indicator-bar-fill" data-pct="35"></div></div>
-          <div class="indicator-value">35</div>
-        </div>
-        <div class="indicator-row">
-          <div class="indicator-name">Advance / Decline</div>
-          <div class="indicator-bar-track"><div class="indicator-bar-fill" data-pct="23"></div></div>
-          <div class="indicator-value">23</div>
-        </div>
-        <div class="indicator-row">
-          <div class="indicator-name">52-week H / L</div>
-          <div class="indicator-bar-track"><div class="indicator-bar-fill" data-pct="43"></div></div>
-          <div class="indicator-value">43</div>
-        </div>
-        <div class="indicator-row">
-          <div class="indicator-name">FII / DII flow</div>
-          <div class="indicator-bar-track"><div class="indicator-bar-fill" data-pct="2"></div></div>
-          <div class="indicator-value">0</div>
+      </div>
+    </div>
+
+    <!-- Sector heatmap strip -->
+    <div class="hawk-grid-bottom">
+      <div class="hpanel">
+        <div class="hpanel-title">Sector Heatmap <span class="hpanel-tag">Regime Score</span></div>
+        <div class="hheat-grid">
+          <div class="hheat-cell" style="background:linear-gradient(135deg,#1f8f6a,#176b50);"><div class="hheat-name">Capital Gds</div><div class="hheat-val">78</div></div>
+          <div class="hheat-cell" style="background:linear-gradient(135deg,#1f8f6a,#176b50);"><div class="hheat-name">Textiles</div><div class="hheat-val">72</div></div>
+          <div class="hheat-cell" style="background:linear-gradient(135deg,#2a8560,#1d6047);"><div class="hheat-name">Private Bank</div><div class="hheat-val">71</div></div>
+          <div class="hheat-cell" style="background:linear-gradient(135deg,#3a7d52,#2b5d3e);"><div class="hheat-name">Bank Nifty</div><div class="hheat-val">69</div></div>
+          <div class="hheat-cell" style="background:linear-gradient(135deg,#3a7d52,#2b5d3e);"><div class="hheat-name">Pharma</div><div class="hheat-val">69</div></div>
+          <div class="hheat-cell" style="background:linear-gradient(135deg,#4d7a45,#385a34);"><div class="hheat-name">Auto</div><div class="hheat-val">65</div></div>
+          <div class="hheat-cell" style="background:linear-gradient(135deg,#5c7340,#445632);"><div class="hheat-name">Defence</div><div class="hheat-val">63</div></div>
+          <div class="hheat-cell" style="background:linear-gradient(135deg,#6e6d3a,#52512c);"><div class="hheat-name">Chemicals</div><div class="hheat-val">57</div></div>
+          <div class="hheat-cell" style="background:linear-gradient(135deg,#7a6638,#5b4c2b);"><div class="hheat-name">PSU Bank</div><div class="hheat-val">54</div></div>
+          <div class="hheat-cell" style="background:linear-gradient(135deg,#85603a,#63482c);"><div class="hheat-name">Nifty Infra</div><div class="hheat-val">52</div></div>
+          <div class="hheat-cell" style="background:linear-gradient(135deg,#8a5a3c,#67432d);"><div class="hheat-name">Energy</div><div class="hheat-val">48</div></div>
+          <div class="hheat-cell" style="background:linear-gradient(135deg,#94502f,#6e3c24);"><div class="hheat-name">FMCG</div><div class="hheat-val">40</div></div>
+          <div class="hheat-cell" style="background:linear-gradient(135deg,#a8473a,#7d352b);"><div class="hheat-name">Media</div><div class="hheat-val">38</div></div>
+          <div class="hheat-cell" style="background:linear-gradient(135deg,#c2433f,#92322f);"><div class="hheat-name">Metal</div><div class="hheat-val">27</div></div>
+          <div class="hheat-cell" style="background:linear-gradient(135deg,#d43f43,#a32f33);"><div class="hheat-name">Nifty IT</div><div class="hheat-val">17</div></div>
         </div>
       </div>
     </div>
@@ -1255,44 +1549,84 @@ body{
       </div>
       <div class="feature-visual reveal">
         <div class="mockup-card">
-          <div class="mockup-tabs">
-            <div class="mockup-tab active">Sectoral Breadth</div>
-            <div class="mockup-tab">Terrain Map</div>
-          </div>
-          <div class="heatmap-grid">
-            <div class="heatmap-cell">
-              <div class="heatmap-cell-name"><span>PHARMA</span><span>20 stk</span></div>
-              <div class="heatmap-cell-score" style="color:#a3e635;">52</div>
-              <div class="heatmap-cell-bar"><div class="heatmap-cell-bar-fill" style="width:52%; background:#a3e635;"></div></div>
-              <span class="heatmap-tag tag-neutral">NEUTRAL</span>
+          <div class="hpanel-title" style="margin-bottom:18px;">Market Score · Multi-Indicator Composite <span class="hpanel-tag">Nifty 500</span></div>
+          <div class="hscore-row" style="grid-template-columns:auto 1fr;">
+            <div class="hscore-gauge-wrap">
+              <svg class="hscore-svg" viewBox="0 0 240 150">
+                <path d="M 20 130 A 100 100 0 0 1 220 130" fill="none" stroke="#1a2138" stroke-width="14" stroke-linecap="round"/>
+                <path class="feat-score-arc" d="M 20 130 A 100 100 0 0 1 220 130" fill="none" stroke="url(#featScoreGrad)" stroke-width="14" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="314"/>
+                <defs>
+                  <linearGradient id="featScoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#f43f5e"/>
+                    <stop offset="50%" stop-color="#f59e0b"/>
+                    <stop offset="100%" stop-color="#2ed8a0"/>
+                  </linearGradient>
+                </defs>
+                <text x="20" y="148" font-family="JetBrains Mono" font-size="11" fill="#4a5578">0</text>
+                <text x="120" y="20" font-family="JetBrains Mono" font-size="11" fill="#4a5578" text-anchor="middle">50</text>
+                <text x="212" y="148" font-family="JetBrains Mono" font-size="11" fill="#4a5578" text-anchor="end">100</text>
+              </svg>
+              <div class="hscore-value"><span class="feat-score-num">0</span><span class="of100">/100</span></div>
+              <div class="hscore-label">Bullish</div>
+              <div class="hscore-subs">
+                <div class="hscore-sub">
+                  <div class="hscore-sub-l">Regime / Slow</div>
+                  <div class="hscore-sub-v">71</div>
+                </div>
+                <div class="hscore-sub">
+                  <div class="hscore-sub-l">Tactical / Fast</div>
+                  <div class="hscore-sub-v">52</div>
+                </div>
+              </div>
             </div>
-            <div class="heatmap-cell">
-              <div class="heatmap-cell-name"><span>BANK NIFTY</span><span>14 stk</span></div>
-              <div class="heatmap-cell-score" style="color:#a3e635;">49</div>
-              <div class="heatmap-cell-bar"><div class="heatmap-cell-bar-fill" style="width:49%; background:#a3e635;"></div></div>
-              <span class="heatmap-tag tag-neutral">NEUTRAL</span>
-            </div>
-            <div class="heatmap-cell">
-              <div class="heatmap-cell-name"><span>NIFTY IT</span><span>10 stk</span></div>
-              <div class="heatmap-cell-score" style="color:var(--accent-rose);">20</div>
-              <div class="heatmap-cell-bar"><div class="heatmap-cell-bar-fill" style="width:20%; background:var(--accent-rose);"></div></div>
-              <span class="heatmap-tag tag-strongbear">STRONG BEAR</span>
-            </div>
-            <div class="heatmap-cell">
-              <div class="heatmap-cell-name"><span>NIFTY REALTY</span><span>10 stk</span></div>
-              <div class="heatmap-cell-score" style="color:var(--accent-rose);">11</div>
-              <div class="heatmap-cell-bar"><div class="heatmap-cell-bar-fill" style="width:11%; background:var(--accent-rose);"></div></div>
-              <span class="heatmap-tag tag-strongbear">STRONG BEAR</span>
-            </div>
-          </div>
-          <div style="margin-top:14px; border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
-            <div>
-              <div style="font-family:var(--font-mono); font-size:9px; letter-spacing:1.5px; color:var(--text-faint); text-transform:uppercase; margin-bottom:4px;">FII / DII · 10 Jun</div>
-              <div style="font-size:13px; color:var(--text-secondary);">FII Sell · DII Buy</div>
-            </div>
-            <div style="text-align:right;">
-              <div style="font-family:var(--font-mono); font-weight:700; font-size:18px; color:var(--accent-rose);">−₹2,125 Cr</div>
-              <div style="font-family:var(--font-mono); font-size:12px; color:var(--accent-cyan);">+₹3,124 Cr</div>
+            <div class="hind-list">
+              <div class="hind-group">Regime · Slow</div>
+              <div class="hind-row">
+                <div class="hind-name">200 EMA breadth</div>
+                <div class="hind-track"><div class="hind-fill" data-pct="57" data-color="green"></div></div>
+                <div class="hind-val pos-green">57</div>
+              </div>
+              <div class="hind-row">
+                <div class="hind-name">Key-index trend</div>
+                <div class="hind-track"><div class="hind-fill" data-pct="89" data-color="green"></div></div>
+                <div class="hind-val pos-green">89</div>
+              </div>
+              <div class="hind-row">
+                <div class="hind-name">50 EMA breadth</div>
+                <div class="hind-track"><div class="hind-fill" data-pct="66" data-color="green"></div></div>
+                <div class="hind-val pos-green">66</div>
+              </div>
+              <div class="hind-group">Tactical · Fast</div>
+              <div class="hind-row">
+                <div class="hind-name">21 EMA breadth</div>
+                <div class="hind-track"><div class="hind-fill" data-pct="62" data-color="green"></div></div>
+                <div class="hind-val pos-green">62</div>
+              </div>
+              <div class="hind-row">
+                <div class="hind-name">Advance / Decline</div>
+                <div class="hind-track"><div class="hind-fill" data-pct="35" data-color="red"></div></div>
+                <div class="hind-val pos-red">35</div>
+              </div>
+              <div class="hind-row">
+                <div class="hind-name">52-week H / L</div>
+                <div class="hind-track"><div class="hind-fill" data-pct="78" data-color="green"></div></div>
+                <div class="hind-val pos-green">78</div>
+              </div>
+              <div class="hind-row">
+                <div class="hind-name">Prev-day H / L</div>
+                <div class="hind-track"><div class="hind-fill" data-pct="32" data-color="red"></div></div>
+                <div class="hind-val pos-red">32</div>
+              </div>
+              <div class="hind-row">
+                <div class="hind-name">Breadth thrust</div>
+                <div class="hind-track"><div class="hind-fill" data-pct="43" data-color="red"></div></div>
+                <div class="hind-val pos-red">43</div>
+              </div>
+              <div class="hind-row">
+                <div class="hind-name">FII / DII flow</div>
+                <div class="hind-track"><div class="hind-fill" data-pct="50" data-color="amber"></div></div>
+                <div class="hind-val pos-amber">50</div>
+              </div>
             </div>
           </div>
         </div>
@@ -1618,29 +1952,42 @@ body{
 </footer>
 
 <script>
-// Animate gauge on load
+// Color map for animated bars
+const barColors = {
+  green: 'linear-gradient(90deg, #1f8f6a, #2ed8a0)',
+  red:   'linear-gradient(90deg, #f43f5e, #fb7185)',
+  amber: 'linear-gradient(90deg, #d97706, #f59e0b)'
+};
+
+// Animate Hawk Eye dashboard on load
 window.addEventListener('load', () => {
   setTimeout(() => {
-    const arc = document.getElementById('gaugeArc');
-    const targetOffset = 314 - (314 * 0.39);
-    arc.style.transition = 'stroke-dashoffset 1.6s cubic-bezier(.16,1,.3,1)';
-    arc.style.strokeDashoffset = targetOffset;
-
-    let current = 0;
-    const target = 39;
-    const duration = 1600;
-    const startTime = performance.now();
-    function tick(now){
-      const progress = Math.min((now - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      current = Math.round(target * eased);
-      document.getElementById('gaugeNum').textContent = current;
-      if(progress < 1) requestAnimationFrame(tick);
+    // Market Score arc → 63/100
+    const arc = document.getElementById('heroScoreArc');
+    if (arc) {
+      const targetOffset = 314 - (314 * 0.63);
+      arc.style.transition = 'stroke-dashoffset 1.6s cubic-bezier(.16,1,.3,1)';
+      arc.style.strokeDashoffset = targetOffset;
     }
-    requestAnimationFrame(tick);
 
-    document.querySelectorAll('.indicator-bar-fill').forEach(bar => {
+    // Count up score number → 63
+    const numEl = document.getElementById('heroScoreNum');
+    if (numEl) {
+      const target = 63, duration = 1600, startTime = performance.now();
+      function tick(now){
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        numEl.textContent = Math.round(target * eased);
+        if(progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    // Animate indicator bars + breadth bars with their colors
+    document.querySelectorAll('.hind-fill, .hbreadth-bar-fill').forEach(bar => {
       const pct = bar.getAttribute('data-pct');
+      const color = bar.getAttribute('data-color') || 'green';
+      bar.style.background = barColors[color];
       bar.style.width = pct + '%';
     });
   }, 200);
@@ -1651,6 +1998,32 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
       entry.target.classList.add('visible');
+
+      // If the feature Market Score panel scrolls in, animate its gauge once
+      if(entry.target.querySelector && entry.target.querySelector('.feat-score-arc')){
+        const fArc = entry.target.querySelector('.feat-score-arc');
+        const fNum = entry.target.querySelector('.feat-score-num');
+        if(fArc && !fArc.dataset.animated){
+          fArc.dataset.animated = '1';
+          fArc.style.transition = 'stroke-dashoffset 1.6s cubic-bezier(.16,1,.3,1)';
+          fArc.style.strokeDashoffset = 314 - (314 * 0.63);
+          const target = 63, duration = 1600, startTime = performance.now();
+          function ftick(now){
+            const progress = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            fNum.textContent = Math.round(target * eased);
+            if(progress < 1) requestAnimationFrame(ftick);
+          }
+          requestAnimationFrame(ftick);
+        }
+        entry.target.querySelectorAll('.hind-fill').forEach(bar => {
+          const pct = bar.getAttribute('data-pct');
+          const color = bar.getAttribute('data-color') || 'green';
+          bar.style.background = barColors[color];
+          bar.style.width = pct + '%';
+        });
+      }
+
       observer.unobserve(entry.target);
     }
   });
