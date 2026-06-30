@@ -1529,7 +1529,7 @@ body{
 .hero-shot{
   position:relative;
   max-width:1200px;
-  margin:0 auto 10px;
+  margin:0 auto 80px;
   padding:0 24px;
   opacity:0;
   animation:fadeUp 1s ease 0.35s forwards;
