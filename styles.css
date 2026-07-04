@@ -1624,7 +1624,7 @@ body{
   font-weight:800;
   letter-spacing:-3px;
   line-height:1;
-  color:#0a0e1a;
+  color:#5b6cff;
 }
 .nutshell-stat .num .unit{
   font-size:0.5em;
@@ -1703,3 +1703,19 @@ body{
   max-width:680px;
 }
 .shot-frame.mid{ max-width:520px; margin-left:auto; margin-right:auto; }
+
+/* ============================================================= */
+/* GRADIENT KEYWORD UTILITY (Deepvue-style accent on headings)   */
+/* ============================================================= */
+.grad{
+  background:linear-gradient(135deg, var(--accent-violet-bright) 0%, var(--accent-cyan) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+/* solid-blue highlight for the light section heading */
+.section-light .hl{ color:#5b6cff; }
+
+/* alignment helpers for tall-image feature rows */
+.feature-grid.top{ align-items:flex-start; }
+.block-center.sm{ max-width:400px; }
