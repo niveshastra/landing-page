@@ -1655,3 +1655,51 @@ body{
 
 /* narrow screenshot frame (keeps small/portrait shots from upscaling) */
 .shot-frame.narrow{ max-width:400px; margin-left:auto; margin-right:auto; }
+
+/* ============================================================= */
+/* MULTI-IMAGE FEATURE BLOCKS (flagship / rich feature pages)    */
+/* ============================================================= */
+.block-head{ max-width:740px; margin:0 auto 44px; text-align:center; }
+.block-eyebrow{
+  font-family:var(--font-mono);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--accent-green);
+  margin-bottom:16px;
+}
+.block-head h2{
+  font-family:var(--font-heading);
+  font-size:clamp(30px,4.4vw,48px);
+  font-weight:800;
+  letter-spacing:-1.4px;
+  line-height:1.1;
+  margin-bottom:18px;
+}
+.block-head p{
+  font-size:clamp(16px,2vw,18px);
+  color:var(--text-secondary);
+  line-height:1.65;
+  max-width:660px;
+  margin:0 auto;
+}
+.block-lead{ max-width:1120px; margin:0 auto; }
+.block-center{ max-width:520px; margin:0 auto; }
+.block-gap{ margin-top:48px; }
+.feature-lead{
+  font-size:18px;
+  font-weight:600;
+  color:var(--text-primary);
+  line-height:1.5;
+  margin-bottom:20px;
+}
+.shot-caption{
+  text-align:center;
+  font-size:14px;
+  line-height:1.5;
+  color:var(--text-muted);
+  margin:16px auto 0;
+  max-width:680px;
+}
+.shot-frame.mid{ max-width:520px; margin-left:auto; margin-right:auto; }
