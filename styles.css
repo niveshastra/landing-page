@@ -880,14 +880,14 @@ body{
 
 /* ===== SECTION SCAFFOLDING ===== */
 .section{
-  padding:140px 0;
+  padding:92px 0;
   position:relative;
 }
 @media (max-width:768px){
-  .section{padding:70px 0;}
+  .section{padding:56px 0;}
 }
 @media (max-width:480px){
-  .section{padding:56px 0;}
+  .section{padding:44px 0;}
 }
 
 .section-eyebrow{
@@ -1529,7 +1529,7 @@ body{
 .hero-shot{
   position:relative;
   max-width:1560px;
-  margin:0 auto 80px;
+  margin:0 auto 40px;
   padding:0 20px;
 }
 
@@ -1577,7 +1577,7 @@ body{
 /* ============================================================= */
 .section-light{
   background:#f4f6fb;
-  padding:110px 32px;
+  padding:84px 32px;
   position:relative;
 }
 .nutshell{ max-width:980px; margin:0 auto; }
@@ -1646,7 +1646,7 @@ body{
   margin-right:auto;
 }
 @media (max-width:768px){
-  .section-light{ padding:72px 20px; }
+  .section-light{ padding:56px 20px; }
   .nutshell-stats{ grid-template-columns:1fr; gap:52px; }
   .nutshell-sub{ margin-bottom:52px; }
 }
