@@ -2142,3 +2142,10 @@ body{
 @media (prefers-reduced-motion: reduce){
   .fp-cards.stagger > *{ opacity:1 !important; transform:none !important; transition:none !important; }
 }
+
+/* Numbered step-mark inside feature-page sub-feature headers */
+.block-head .step-mark{
+  justify-content:center;
+  margin-bottom:18px;
+}
+.block-head .step-rule{ max-width:120px; }
