@@ -1726,7 +1726,7 @@ body{
   grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
   gap:26px 44px;
   max-width:1060px;
-  margin:46px auto 0;
+  margin:70px auto 0;
 }
 .feature-row .feature-item{ margin-bottom:0; }
 .feature-cta-center{ text-align:center; margin-top:42px; }
