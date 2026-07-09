@@ -1771,7 +1771,7 @@ body{
   display:flex;
   align-items:baseline;
   gap:16px;
-  margin-bottom:22px;
+  margin-bottom:34px;
 }
 .step-num{
   font-family:var(--font-mono);
@@ -2146,6 +2146,6 @@ body{
 /* Numbered step-mark inside feature-page sub-feature headers */
 .block-head .step-mark{
   justify-content:center;
-  margin-bottom:18px;
+  margin-bottom:32px;
 }
 .block-head .step-rule{ max-width:120px; }
