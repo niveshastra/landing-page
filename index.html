@@ -22,7 +22,25 @@
       </div>
     </a>
     <div class="nav-links">
-      <a href="/#features">Features</a>
+      <div class="nav-dd">
+        <a href="/#features">Features
+          <svg class="caret" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+        <div class="nav-dd-menu">
+          <a class="nav-dd-item" href="/market-data.html">
+            <span class="dd-t">Market Data</span>
+            <span class="dd-d">Score, breadth, sectors, flows — the daily read.</span>
+          </a>
+          <a class="nav-dd-item" href="/watchlist-scan.html">
+            <span class="dd-t">Watchlist Scan</span>
+            <span class="dd-d">Build lists, scan them on charts at speed.</span>
+          </a>
+          <a class="nav-dd-item" href="/portfolio-tracker.html">
+            <span class="dd-t">Portfolio Tracker</span>
+            <span class="dd-d">Your book, live positions and a lifetime journal.</span>
+          </a>
+        </div>
+      </div>
       <a href="/#pricing">Pricing</a>
       <a href="/#mstp">MSTP</a>
       <a href="https://app.niveshastra.com/login.html" class="nav-cta">Get Started</a>
@@ -49,7 +67,7 @@
   </div>
 
   <!-- Dashboard hero screenshot -->
-  <div class="hero-shot">
+  <div class="hero-shot lift">
     <div class="mockup-card shot-frame">
       <img src="/assets/home-hero.png" alt="NiveshAstra dashboard — the Hawk Eye command centre">
     </div>
@@ -59,7 +77,7 @@
 <!-- PROBLEM STRIP -->
 <section class="section-light">
   <div class="container">
-    <div class="nutshell reveal">
+    <div class="nutshell rise">
       <div class="nutshell-eyebrow">One dashboard, built for professional trading</div>
       <h2>Top traders track everything. Now it fits on <span class="hl">one screen</span>.</h2>
       <p class="nutshell-sub">
@@ -67,7 +85,7 @@
         sectors in strength, daily updates, portfolio positions, past trade performance, and a
         self-curated watchlist. NiveshAstra collapses all of these into one Dashboard.
       </p>
-      <div class="nutshell-stats">
+      <div class="nutshell-stats stagger">
         <div class="nutshell-stat">
           <div class="num">&infin;</div>
           <div class="stat-label">signals, one dashboard</div>
@@ -88,254 +106,115 @@
   </div>
 </section>
 
-<!-- FEATURE 1: Market Data Analytics -->
-<section class="section" id="features">
+<!-- FEATURES: the daily routine, in order -->
+<div id="features"></div>
+
+<section class="section">
   <div class="container">
-    <div class="feature-grid">
-      <div class="feature-text reveal">
-        <div class="section-eyebrow">01 · Market Data Analytics</div>
-        <h2 class="section-title">Every breadth signal, <span class="grad">in one composite score.</span></h2>
-        <p class="section-desc">
-          Stop scanning seven different breadth charts every morning. NiveshAstra blends slow regime indicators with fast tactical ones into a single 0–100 score — and breaks down exactly which sectors are driving it.
-        </p>
-        <div class="feature-list">
-          <div class="feature-item">
-            <div class="feature-item-icon">◆</div>
-            <div class="feature-item-text"><strong>Regime + Tactical layers</strong> — 200/50 EMA breadth for the slow trend, 21 EMA and Advance/Decline for fast timing, weighted into one Market Score.</div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-item-icon">◆</div>
-            <div class="feature-item-text"><strong>Sectoral breadth & terrain map</strong> — 13 sectors ranked by regime score, with drill-down to constituent stocks, RS vs Nifty 500, and 52-week proximity.</div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-item-icon">◆</div>
-            <div class="feature-item-text"><strong>FII/DII flow tracker</strong> — daily institutional buy/sell data with combined flow signal, sourced from NSE.</div>
-          </div>
-        </div>
+    <div class="feat-intro rise">
+      <div class="step-mark">
+        <span class="step-num">01</span>
+        <span class="step-label">Market Data</span>
+        <span class="step-rule"></span>
       </div>
-      <div class="feature-visual reveal">
-        <div class="mockup-card">
-          <div class="hpanel-title" style="margin-bottom:18px;">Market Score · Multi-Indicator Composite <span class="hpanel-tag">Nifty 500</span></div>
-          <div class="hscore-row" style="grid-template-columns:auto 1fr;">
-            <div class="hscore-gauge-wrap">
-              <svg class="hscore-svg" viewBox="0 0 240 150">
-                <path d="M 20 130 A 100 100 0 0 1 220 130" fill="none" stroke="#1a2138" stroke-width="14" stroke-linecap="round"/>
-                <path class="feat-score-arc" d="M 20 130 A 100 100 0 0 1 220 130" fill="none" stroke="url(#featScoreGrad)" stroke-width="14" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="314"/>
-                <defs>
-                  <linearGradient id="featScoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#f43f5e"/>
-                    <stop offset="50%" stop-color="#f59e0b"/>
-                    <stop offset="100%" stop-color="#2ed8a0"/>
-                  </linearGradient>
-                </defs>
-                <text x="20" y="148" font-family="Plus Jakarta Sans" font-size="11" fill="#4a5578">0</text>
-                <text x="120" y="20" font-family="Plus Jakarta Sans" font-size="11" fill="#4a5578" text-anchor="middle">50</text>
-                <text x="212" y="148" font-family="Plus Jakarta Sans" font-size="11" fill="#4a5578" text-anchor="end">100</text>
-              </svg>
-              <div class="hscore-value"><span class="feat-score-num">0</span><span class="of100">/100</span></div>
-              <div class="hscore-label">Bullish</div>
-              <div class="hscore-subs">
-                <div class="hscore-sub">
-                  <div class="hscore-sub-l">Regime / Slow</div>
-                  <div class="hscore-sub-v">71</div>
-                </div>
-                <div class="hscore-sub">
-                  <div class="hscore-sub-l">Tactical / Fast</div>
-                  <div class="hscore-sub-v">52</div>
-                </div>
-              </div>
-            </div>
-            <div class="hind-list">
-              <div class="hind-group">Regime · Slow</div>
-              <div class="hind-row">
-                <div class="hind-name">200 EMA breadth</div>
-                <div class="hind-track"><div class="hind-fill" data-pct="57" data-color="green"></div></div>
-                <div class="hind-val pos-green">57</div>
-              </div>
-              <div class="hind-row">
-                <div class="hind-name">Key-index trend</div>
-                <div class="hind-track"><div class="hind-fill" data-pct="89" data-color="green"></div></div>
-                <div class="hind-val pos-green">89</div>
-              </div>
-              <div class="hind-row">
-                <div class="hind-name">50 EMA breadth</div>
-                <div class="hind-track"><div class="hind-fill" data-pct="66" data-color="green"></div></div>
-                <div class="hind-val pos-green">66</div>
-              </div>
-              <div class="hind-group">Tactical · Fast</div>
-              <div class="hind-row">
-                <div class="hind-name">21 EMA breadth</div>
-                <div class="hind-track"><div class="hind-fill" data-pct="62" data-color="green"></div></div>
-                <div class="hind-val pos-green">62</div>
-              </div>
-              <div class="hind-row">
-                <div class="hind-name">Advance / Decline</div>
-                <div class="hind-track"><div class="hind-fill" data-pct="35" data-color="red"></div></div>
-                <div class="hind-val pos-red">35</div>
-              </div>
-              <div class="hind-row">
-                <div class="hind-name">52-week H / L</div>
-                <div class="hind-track"><div class="hind-fill" data-pct="78" data-color="green"></div></div>
-                <div class="hind-val pos-green">78</div>
-              </div>
-              <div class="hind-row">
-                <div class="hind-name">Prev-day H / L</div>
-                <div class="hind-track"><div class="hind-fill" data-pct="32" data-color="red"></div></div>
-                <div class="hind-val pos-red">32</div>
-              </div>
-              <div class="hind-row">
-                <div class="hind-name">Breadth thrust</div>
-                <div class="hind-track"><div class="hind-fill" data-pct="43" data-color="red"></div></div>
-                <div class="hind-val pos-red">43</div>
-              </div>
-              <div class="hind-row">
-                <div class="hind-name">FII / DII flow</div>
-                <div class="hind-track"><div class="hind-fill" data-pct="50" data-color="amber"></div></div>
-                <div class="hind-val pos-amber">50</div>
-              </div>
-            </div>
-          </div>
+      <h2>Read the market <span class="grad">before it reads you.</span></h2>
+      <p>Breadth, participation, sector rotation and institutional flows — distilled into one proprietary Market Score, updated every trading day.</p>
+      <a class="learn-link" href="/market-data.html">Explore Market Data <span class="arw">→</span></a>
+    </div>
+    <div class="home-shot pair lift">
+      <div class="mockup-card shot-frame"><img src="/assets/market-score.png" alt="NiveshAstra Market Score composite" loading="lazy"></div>
+      <div class="mockup-card shot-frame"><img src="/assets/sectoral-analysis.png" alt="NiveshAstra sector terrain map" loading="lazy"></div>
+    </div>
+    <div class="feat-points stagger">
+        <div class="feat-point">
+          <div class="fp-title">Market Score</div>
+          <div class="fp-desc">Nine signals weighted into a single 0–100 composite, split into regime and tactical reads.</div>
         </div>
-      </div>
+        <div class="feat-point">
+          <div class="fp-title">Daily Market Brief</div>
+          <div class="fp-desc">The day's narrative in plain English, with every key point tagged bullish or bearish.</div>
+        </div>
+        <div class="feat-point">
+          <div class="fp-title">Breadth & Sectors</div>
+          <div class="fp-desc">EMA participation, advance–decline, and a terrain map of every sector's strength.</div>
+        </div>
+        <div class="feat-point">
+          <div class="fp-title">Institutional Flow</div>
+          <div class="fp-desc">Daily FII and DII activity — see who is buying and who is selling.</div>
+        </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURE 2: Leading Stocks Filter -->
-<section class="section">
+<section class="section alt">
   <div class="container">
-    <div class="feature-grid reverse">
-      <div class="feature-text reveal">
-        <div class="section-eyebrow">02 · Leading Stocks Filter</div>
-        <h2 class="section-title">Find the 60 stocks leading the market — <span class="grad">before everyone else does.</span></h2>
-        <p class="section-desc">
-          A focused watchlist of 172 stocks (from a full universe of 285), ranked by Price Strength — a composite of how far each stock trades above its 21, 50, and 200-day EMAs. No formulas to write. No screens to configure.
-        </p>
-        <div class="feature-list">
-          <div class="feature-item">
-            <div class="feature-item-icon">◆</div>
-            <div class="feature-item-text"><strong>Price Strength Rating (0–99)</strong> — ranks every stock by trend strength relative to its own moving averages, updated daily.</div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-item-icon">◆</div>
-            <div class="feature-item-text"><strong>Chart Scan mode</strong> — flip through your watchlist one chart at a time, with EMA 10/20/50/200 overlays, fundamentals, and technical distances side by side.</div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-item-icon">◆</div>
-            <div class="feature-item-text"><strong>Focused vs Full Watchlist</strong> — toggle between the curated leadership list and the broader universe in one click.</div>
-          </div>
-        </div>
+    <div class="feat-intro rise">
+      <div class="step-mark">
+        <span class="step-num">02</span>
+        <span class="step-label">Watchlist Scan</span>
+        <span class="step-rule"></span>
       </div>
-      <div class="feature-visual reveal">
-        <div class="mockup-card">
-          <div class="mockup-tabs">
-            <div class="mockup-tab active">Focused Watchlist · 172</div>
-            <div class="mockup-tab">Full Watchlist · 285</div>
-          </div>
-          <table class="watchlist-table">
-            <thead>
-              <tr><th>Symbol</th><th>vs 200 EMA</th><th>Strength</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><div class="wt-symbol">ATLANTAELE</div><div class="wt-company">Atlanta Electricals</div></td>
-                <td class="wt-pos">+55.2%</td>
-                <td><span class="wt-score">97</span></td>
-              </tr>
-              <tr>
-                <td><div class="wt-symbol">BAJAJCON</div><div class="wt-company">Bajaj Consumer Care</div></td>
-                <td class="wt-pos">+52.7%</td>
-                <td><span class="wt-score">97</span></td>
-              </tr>
-              <tr>
-                <td><div class="wt-symbol">ATHERENERG</div><div class="wt-company">Ather Energy Ltd</div></td>
-                <td class="wt-pos">+43.9%</td>
-                <td><span class="wt-score">97</span></td>
-              </tr>
-              <tr>
-                <td><div class="wt-symbol">SWANDEF</div><div class="wt-company">Swan Defence & Heavy Ind</div></td>
-                <td class="wt-pos">+55.8%</td>
-                <td><span class="wt-score">99</span></td>
-              </tr>
-              <tr>
-                <td><div class="wt-symbol">MTARTECH</div><div class="wt-company">Mtar Technologies</div></td>
-                <td class="wt-pos">+76.4%</td>
-                <td><span class="wt-score">99</span></td>
-              </tr>
-            </tbody>
-          </table>
+      <h2>Scan fast. <span class="grad">Miss nothing.</span></h2>
+      <p>Build focused watchlists, then run them through clean charts at speed — key EMAs, fundamentals and technicals in a single glance.</p>
+      <a class="learn-link" href="/watchlist-scan.html">Explore Watchlist Scan <span class="arw">→</span></a>
+    </div>
+    <div class="home-shot lift">
+      <div class="mockup-card shot-frame"><img src="/assets/wl-hero.png" alt="NiveshAstra Watchlist Scan chart view" loading="lazy"></div>
+    </div>
+    <div class="feat-points stagger">
+        <div class="feat-point">
+          <div class="fp-title">Custom Watchlists</div>
+          <div class="fp-desc">Up to ten lists by theme or sector — momentum, IPOs, value, defence, pharma. Your call.</div>
         </div>
-      </div>
+        <div class="feat-point">
+          <div class="fp-title">One-Click Scanning</div>
+          <div class="fp-desc">Toggle straight through your entire list. Scan it in minutes, not hours.</div>
+        </div>
+        <div class="feat-point">
+          <div class="fp-title">EMA Guidance</div>
+          <div class="fp-desc">10 / 20 / 50 / 200-day EMAs built into every chart, daily and weekly.</div>
+        </div>
+        <div class="feat-point">
+          <div class="fp-title">Fundamentals & Technicals</div>
+          <div class="fp-desc">Market cap, PE, PB, ROE and distance from every key EMA, under each chart.</div>
+        </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURE 3: Trading Journal -->
 <section class="section">
   <div class="container">
-    <div class="feature-grid">
-      <div class="feature-text reveal">
-        <div class="section-eyebrow">03 · Professional Trading Journal</div>
-        <h2 class="section-title">Every entry, exit, and pyramid — <span class="grad">mapped automatically.</span></h2>
-        <p class="section-desc">
-          Stop reconstructing your trades from memory at month-end. NiveshAstra logs every action — entries, partial exits, pyramids — and turns it into a full journal with realised P&L, win rate, and profit factor.
-        </p>
-        <div class="feature-list">
-          <div class="feature-item">
-            <div class="feature-item-icon">◆</div>
-            <div class="feature-item-text"><strong>Trade journey timeline</strong> — initial entry, every add and partial exit, and final exit with running P&L for each step.</div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-item-icon">◆</div>
-            <div class="feature-item-text"><strong>Annotated trade cards</strong> — write your thesis ("strong recovery after post-result sell-off") right alongside the chart.</div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-item-icon">◆</div>
-            <div class="feature-item-text"><strong>Portfolio-level stats</strong> — win rate, profit factor, average return, and max profit/loss across your full trading history.</div>
-          </div>
-        </div>
+    <div class="feat-intro rise">
+      <div class="step-mark">
+        <span class="step-num">03</span>
+        <span class="step-label">Portfolio Tracker</span>
+        <span class="step-rule"></span>
       </div>
-      <div class="feature-visual reveal">
-        <div class="mockup-card">
-          <div class="trade-card">
-            <div class="trade-card-header">
-              <div>
-                <div class="trade-card-symbol">
-                  <span class="sym">PARAS</span>
-                  <span class="trade-tag tag-long">Long</span>
-                  <span class="trade-tag tag-pyramid">Pyramided</span>
-                  <span class="trade-tag tag-reduced">Reduced</span>
-                </div>
-                <div class="trade-card-name">Paras Defence & Space Tech · Defence · Flat Base</div>
-              </div>
-              <div>
-                <div class="trade-card-return">+20.3%</div>
-                <div class="trade-card-return-sub">+3.2R</div>
-              </div>
-            </div>
-            <div class="trade-note">"Strong recovery after a post-result sell-off; Strong Qtr; Sectoral strength in defence and drones"</div>
-            <div class="trade-stats">
-              <div class="trade-stat">
-                <div class="trade-stat-label">Entry / CMP</div>
-                <div class="trade-stat-value">₹862.3 → ₹1,040.5</div>
-              </div>
-              <div class="trade-stat">
-                <div class="trade-stat-label">Position Size</div>
-                <div class="trade-stat-value">18.83%</div>
-              </div>
-              <div class="trade-stat">
-                <div class="trade-stat-label">Notional P&L</div>
-                <div class="trade-stat-value" style="color:var(--accent-cyan);">+₹3,24,638</div>
-              </div>
-            </div>
-            <div class="trade-log">
-              <div class="trade-log-row"><span><span class="trade-log-date">25 May</span>Entry · 1800 shares @ ₹862.3</span><span>18.26% of capital</span></div>
-              <div class="trade-log-row"><span><span class="trade-log-date">26 May</span>Added · 510 shares @ ₹874.6</span><span>5.25% of capital</span></div>
-              <div class="trade-log-row"><span><span class="trade-log-date">10 Jun</span>Partial Exit · 460 shares @ ₹1,053</span><span class="wt-pos">+₹86,471 (+21.73%)</span></div>
-            </div>
-          </div>
+      <h2>Track the book, <span class="grad">not just the trade.</span></h2>
+      <p>A 360° view of your capital, every open position tracked live, and a lifetime journal of every trade you have ever closed.</p>
+      <a class="learn-link" href="/portfolio-tracker.html">Explore Portfolio Tracker <span class="arw">→</span></a>
+    </div>
+    <div class="home-shot pair lift">
+      <div class="mockup-card shot-frame"><img src="/assets/portfolio-hero.png" alt="NiveshAstra Portfolio Tracker 360 overview" loading="lazy"></div>
+      <div class="mockup-card shot-frame"><img src="/assets/journal-trade.png" alt="NiveshAstra trade journal" loading="lazy"></div>
+    </div>
+    <div class="feat-points stagger">
+        <div class="feat-point">
+          <div class="fp-title">360° Overview</div>
+          <div class="fp-desc">Invested capital, open and realised P&L, cash, margin and open risk — at a glance.</div>
         </div>
-      </div>
+        <div class="feat-point">
+          <div class="fp-title">Positions Manager</div>
+          <div class="fp-desc">A live card per position: annotated chart, thesis, entry, average and running P&L.</div>
+        </div>
+        <div class="feat-point">
+          <div class="fp-title">Trade Journal</div>
+          <div class="fp-desc">Every closed trade archived for life, with the full journey replayed on the chart.</div>
+        </div>
+        <div class="feat-point">
+          <div class="fp-title">Performance Metrics</div>
+          <div class="fp-desc">Profit factor, win rate, expectancy and drawdown — computed from every closed trade.</div>
+        </div>
     </div>
   </div>
 </section>
@@ -518,50 +397,24 @@
 </footer>
 
 <script>
-// Color map for animated bars
-const barColors = {
-  green: 'linear-gradient(90deg, #1f8f6a, #2ed8a0)',
-  red:   'linear-gradient(90deg, #f43f5e, #fb7185)',
-  amber: 'linear-gradient(90deg, #d97706, #f59e0b)'
-};
-
-// Scroll-triggered reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-
-      // If the feature Market Score panel scrolls in, animate its gauge once
-      if(entry.target.querySelector && entry.target.querySelector('.feat-score-arc')){
-        const fArc = entry.target.querySelector('.feat-score-arc');
-        const fNum = entry.target.querySelector('.feat-score-num');
-        if(fArc && !fArc.dataset.animated){
-          fArc.dataset.animated = '1';
-          fArc.style.transition = 'stroke-dashoffset 1.6s cubic-bezier(.16,1,.3,1)';
-          fArc.style.strokeDashoffset = 314 - (314 * 0.63);
-          const target = 63, duration = 1600, startTime = performance.now();
-          function ftick(now){
-            const progress = Math.min((now - startTime) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            fNum.textContent = Math.round(target * eased);
-            if(progress < 1) requestAnimationFrame(ftick);
-          }
-          requestAnimationFrame(ftick);
-        }
-        entry.target.querySelectorAll('.hind-fill').forEach(bar => {
-          const pct = bar.getAttribute('data-pct');
-          const color = bar.getAttribute('data-color') || 'green';
-          bar.style.background = barColors[color];
-          bar.style.width = pct + '%';
-        });
+// Apple-style scroll choreography: elements rise, lift and stagger into place
+(function(){
+  var els = document.querySelectorAll('.rise, .lift, .stagger, .reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in','visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        e.target.classList.add('in');
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
       }
-
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function(el){ io.observe(el); });
+})();
 </script>
 
 </body>
