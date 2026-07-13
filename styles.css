@@ -2151,7 +2151,7 @@ body{
 .block-head .step-rule{ max-width:120px; }
 
 /* ============================================================= */
-/* PRICING v4 — centered cards, natural height, comet on annual  */
+/* PRICING v5 — content-height cards, working comet, corner stamp */
 /* ============================================================= */
 .price-wrap{
   max-width:840px;
@@ -2159,68 +2159,82 @@ body{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:26px;
-  align-items:stretch;
+  align-items:start;            /* FIX: cards size to their content, not stretched */
 }
 @media (max-width:760px){ .price-wrap{ grid-template-columns:1fr; max-width:420px; } }
 
 .pcard{
   position:relative;
   border-radius:24px;
-  padding:40px 34px;
+  padding:42px 34px 38px;
   display:flex;
   flex-direction:column;
-  align-items:center;            /* CENTER everything */
+  align-items:center;           /* everything centered, uniformly */
   text-align:center;
-  overflow:hidden;
+  /* NOTE: no overflow:hidden — it clipped the comet border + corner stamp */
 }
-/* Monthly — restrained matte dark */
 .pcard.plain{
   background:linear-gradient(180deg, rgba(19,24,41,.72), rgba(13,18,36,.9));
   border:1px solid rgba(255,255,255,.08);
 }
-/* Annual — comet-tail spinning border + violet fill + glow */
+
+/* Annual: comet border lives on a ::before layer (so overflow/stamp are free) */
 .pcard.hero{
-  background:
-    linear-gradient(165deg, rgba(34,31,74,.96) 0%, rgba(16,19,40,.98) 100%) padding-box,
-    conic-gradient(from var(--comet-angle),
-      transparent 0deg, transparent 200deg,
-      rgba(99,102,241,0.28) 260deg,
-      rgba(99,102,241,0.75) 305deg,
-      rgba(165,180,255,1) 340deg,
-      rgba(220,230,255,1) 355deg,
-      transparent 360deg) border-box;
+  background:linear-gradient(165deg, rgba(34,31,74,.96) 0%, rgba(16,19,40,.98) 100%);
   border:2px solid transparent;
-  animation:cometSpin 4s linear infinite;
   box-shadow:0 34px 90px -20px rgba(79,70,229,.4), 0 0 46px rgba(99,102,241,.16);
-  filter:drop-shadow(0 0 8px rgba(143,163,255,.22));
+}
+.pcard.hero::before{
+  content:'';
+  position:absolute; inset:-2px;
+  border-radius:24px;
+  padding:2px;
+  background:conic-gradient(from var(--comet-angle),
+      transparent 0deg, transparent 200deg,
+      rgba(99,102,241,0.30) 260deg,
+      rgba(99,102,241,0.8) 305deg,
+      rgba(165,180,255,1) 340deg,
+      rgba(230,236,255,1) 355deg,
+      transparent 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+  animation:cometSpin 4s linear infinite;
+  pointer-events:none;
+  z-index:2;
 }
 @supports not (background: paint(something)){
-  .pcard.hero{
-    background:linear-gradient(165deg, rgba(34,31,74,.96), rgba(16,19,40,.98));
-    border:1.5px solid rgba(143,163,255,.4); animation:none;
-  }
+  .pcard.hero{ border:1.5px solid rgba(143,163,255,.45); }
+  .pcard.hero::before{ display:none; }
 }
 .pcard.hero::after{
-  content:''; position:absolute; inset:-40% -30% auto -30%; height:80%;
-  background:radial-gradient(ellipse at 50% 0%, rgba(129,140,248,.32), transparent 62%);
+  content:''; position:absolute; inset:-40% -30% 40% -30%;
+  background:radial-gradient(ellipse at 50% 0%, rgba(129,140,248,.30), transparent 62%);
   filter:blur(34px); pointer-events:none; z-index:0;
 }
 .pcard > *{ position:relative; z-index:1; }
 
-.pcard-badge{
+/* Corner "stamp" — overhangs the top-right, grows on reveal */
+.pcard-stamp{
+  position:absolute;
+  top:-14px; right:-14px;
+  z-index:3;
   display:inline-flex; align-items:center; gap:7px;
-  margin-bottom:20px; padding:7px 16px; border-radius:99px;
+  padding:9px 16px; border-radius:12px;
   font-family:var(--font-mono); font-size:11px; font-weight:700;
-  letter-spacing:1.5px; text-transform:uppercase; white-space:nowrap;
-  color:var(--accent-violet-bright);
-  background:rgba(99,102,241,.14);
-  border:1px solid rgba(129,140,248,.4);
+  letter-spacing:1.3px; text-transform:uppercase; white-space:nowrap;
+  color:#fff;
+  background:linear-gradient(135deg, var(--accent-violet), var(--accent-violet-bright));
+  box-shadow:0 10px 26px rgba(79,70,229,.5);
+  transform:rotate(3deg) scale(0);
+  transform-origin:center;
+  transition:transform .6s cubic-bezier(.34,1.56,.64,1) .35s;  /* springy grow */
 }
-.pcard-badge.ghost{ visibility:hidden; }
+.price-wrap.in .pcard-stamp{ transform:rotate(3deg) scale(1); }
+
 .pcard-term{
   font-family:var(--font-mono); font-size:12px; font-weight:600;
   letter-spacing:3px; text-transform:uppercase; color:var(--text-muted);
-  margin-bottom:14px;
+  margin-bottom:16px;
 }
 .pcard.hero .pcard-term{ color:var(--accent-blue-lt); }
 .pcard-price{ display:flex; align-items:flex-start; justify-content:center; gap:5px; margin-bottom:12px; }
@@ -2231,12 +2245,12 @@ body{
   color:var(--text-primary);
 }
 .pcard-per{ font-size:17px; color:var(--text-muted); align-self:flex-end; padding-bottom:14px; }
-.pcard-note{ font-size:14.5px; color:var(--text-secondary); line-height:1.55; max-width:300px; }
+.pcard-note{ font-size:14.5px; color:var(--text-secondary); line-height:1.55; max-width:290px; }
 .pcard-note .pcard-strike{ color:var(--text-muted); text-decoration:line-through; }
 .pcard-note .pcard-save{ color:var(--accent-green); font-weight:600; }
 .pcard-btn{
   display:block; width:100%; text-align:center;
-  margin-top:28px;
+  margin-top:30px;
   padding:15px 20px; border-radius:13px;
   font-size:15.5px; font-weight:700;
   border:1px solid var(--border);
@@ -2253,7 +2267,6 @@ body{
 .pcard-btn:not(.disabled):hover{ transform:translateY(-2px); }
 .pcard.hero .pcard-btn:not(.disabled):hover{ box-shadow:0 18px 44px rgba(99,102,241,.55); }
 
-/* "Everything included" — Market-Data tick style */
 .price-included{ max-width:940px; margin:52px auto 0; }
 .price-included-head{
   text-align:center;
