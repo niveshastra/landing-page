@@ -2149,3 +2149,113 @@ body{
   margin-bottom:32px;
 }
 .block-head .step-rule{ max-width:120px; }
+
+/* ============================================================= */
+/* PRICING v2 — single plan, premium two-card (monthly + annual) */
+/* ============================================================= */
+.price-wrap{
+  max-width:900px;
+  margin:56px auto 0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  align-items:stretch;
+}
+@media (max-width:760px){ .price-wrap{ grid-template-columns:1fr; max-width:440px; } }
+
+.pcard{
+  position:relative;
+  border-radius:22px;
+  padding:38px 34px 34px;
+  background:linear-gradient(180deg, rgba(19,24,41,.82), rgba(13,18,36,.92));
+  border:1px solid rgba(255,255,255,.08);
+  display:flex;
+  flex-direction:column;
+}
+/* Annual — the hero card: gradient hairline + glow + lift */
+.pcard.hero{
+  background:
+    linear-gradient(180deg, rgba(23,29,50,.95), rgba(15,20,40,.97)) padding-box,
+    linear-gradient(135deg, rgba(129,140,248,.7), rgba(45,212,191,.45)) border-box;
+  border:1.5px solid transparent;
+  box-shadow:0 30px 80px rgba(79,70,229,.22), 0 0 0 1px rgba(255,255,255,.03) inset;
+}
+.pcard.hero::before{
+  content:'';
+  position:absolute; inset:-30% -20% auto -20%; height:70%;
+  background:radial-gradient(ellipse at 50% 0%, rgba(99,102,241,.28), transparent 66%);
+  filter:blur(30px); pointer-events:none; z-index:0;
+}
+.pcard > *{ position:relative; z-index:1; }
+
+.pcard-badge{
+  position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+  display:inline-flex; align-items:center; gap:7px;
+  padding:6px 15px; border-radius:99px;
+  font-family:var(--font-mono); font-size:11px; font-weight:700;
+  letter-spacing:1.5px; text-transform:uppercase; white-space:nowrap;
+  color:#fff;
+  background:linear-gradient(135deg, var(--accent-violet-bright), var(--accent-cyan));
+  box-shadow:0 8px 24px rgba(99,102,241,.4);
+}
+.pcard-term{
+  font-family:var(--font-mono); font-size:12px; font-weight:600;
+  letter-spacing:2.5px; text-transform:uppercase; color:var(--text-muted);
+  margin-bottom:20px;
+}
+.pcard.hero .pcard-term{ color:var(--accent-cyan); }
+.pcard-price{ display:flex; align-items:flex-start; gap:4px; margin-bottom:6px; }
+.pcard-cur{ font-size:26px; font-weight:700; color:var(--text-primary); margin-top:10px; }
+.pcard-amt{
+  font-family:var(--font-heading);
+  font-size:66px; font-weight:800; letter-spacing:-3px; line-height:1;
+  color:var(--text-primary);
+}
+.pcard-per{ font-size:16px; color:var(--text-muted); margin-top:auto; align-self:flex-end; padding-bottom:12px; }
+.pcard-note{ font-size:14px; color:var(--text-secondary); line-height:1.5; margin-bottom:8px; min-height:22px; }
+.pcard-strike{ color:var(--text-muted); text-decoration:line-through; }
+.pcard-save{ color:var(--accent-green); font-weight:600; }
+.pcard-btn{
+  display:block; text-align:center; margin:26px 0 0;
+  padding:15px 20px; border-radius:13px;
+  font-size:15.5px; font-weight:700; cursor:pointer;
+  border:1px solid var(--border);
+  color:var(--text-primary);
+  background:rgba(255,255,255,.03);
+  transition:transform .3s cubic-bezier(.16,1,.3,1), background .3s ease, border-color .3s ease;
+}
+.pcard.hero .pcard-btn{
+  border:1px solid transparent; color:#fff;
+  background:linear-gradient(135deg, var(--accent-violet), var(--accent-violet-bright));
+  box-shadow:0 12px 30px rgba(99,102,241,.35);
+}
+.pcard-btn:hover{ transform:translateY(-2px); }
+.pcard.hero .pcard-btn:hover{ box-shadow:0 16px 40px rgba(99,102,241,.5); }
+.pcard-btn.disabled{ opacity:.85; cursor:default; }
+.pcard-btn.disabled:hover{ transform:none; }
+
+/* "Everything included" band */
+.price-included{ max-width:900px; margin:44px auto 0; }
+.price-included-head{
+  text-align:center;
+  font-family:var(--font-mono); font-size:12px; font-weight:600;
+  letter-spacing:3px; text-transform:uppercase; color:var(--accent-green);
+  margin-bottom:26px;
+}
+.price-incl-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:14px 30px;
+}
+.price-incl-item{ display:flex; align-items:flex-start; gap:12px; }
+.price-incl-item .ic{
+  flex:none; width:22px; height:22px; margin-top:1px;
+  border-radius:7px; display:grid; place-items:center;
+  font-size:12px; font-weight:800; color:#fff;
+  background:linear-gradient(135deg, var(--accent-violet-bright), var(--accent-cyan));
+}
+.price-incl-item .tx{ font-size:15px; line-height:1.5; color:var(--text-secondary); }
+.price-incl-item .tx b{ color:var(--text-primary); font-weight:600; }
+.price-foot{
+  text-align:center; margin-top:40px;
+  font-size:14px; color:var(--text-muted);
+}
