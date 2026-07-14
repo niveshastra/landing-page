@@ -2159,7 +2159,7 @@ body{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:26px;
-  align-items:start;            /* FIX: cards size to their content, not stretched */
+  align-items:stretch;         /* equal height — safe now the .hero collision is gone */
 }
 @media (max-width:760px){ .price-wrap{ grid-template-columns:1fr; max-width:420px; } }
 
@@ -2263,7 +2263,8 @@ body{
 .pcard-note .pcard-save{ color:var(--accent-green); font-weight:600; }
 .pcard-btn{
   display:block; width:100%; text-align:center;
-  margin-top:30px;
+  margin-top:auto;             /* pin CTA to card bottom -> aligned across both cards */
+  padding-top:0;
   padding:15px 20px; border-radius:13px;
   font-size:15.5px; font-weight:700;
   border:1px solid var(--border);
