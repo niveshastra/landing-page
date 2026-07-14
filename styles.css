@@ -2208,9 +2208,9 @@ body{
   .pcard.featured::before{ display:none; }
 }
 .pcard.featured::after{
-  content:''; position:absolute; inset:-40% -30% 40% -30%;
-  background:radial-gradient(ellipse at 50% 0%, rgba(129,140,248,.30), transparent 62%);
-  filter:blur(34px); pointer-events:none; z-index:0;
+  content:''; position:absolute; inset:-14% -16% 30% -16%;
+  background:radial-gradient(ellipse at 50% 30%, rgba(129,140,248,.16), transparent 62%);
+  filter:blur(26px); pointer-events:none; z-index:0;
 }
 .pcard > *{ position:relative; z-index:1; }
 
@@ -2315,3 +2315,22 @@ body{
 /* De-linked buttons (private until payment gateway) keep look, drop pointer */
 .nav-cta[aria-disabled="true"],
 .btn-primary[aria-disabled="true"]{ cursor:default; }
+
+/* Force specific hero/section headings onto a single line (no font change) */
+.h2-oneline{ white-space:nowrap; }
+@media (max-width:640px){ .h2-oneline{ white-space:normal; } }  /* wrap on small phones to avoid overflow */
+
+
+/* ============================================================= */
+/* HOMEPAGE-ONLY BLACK THEME (scoped) — compare vs default navy  */
+/* ============================================================= */
+body.theme-black{ background:#000; }
+/* base dark sections + footer become true black; white section untouched */
+body.theme-black .section{ background:#000; }
+body.theme-black .footer{ background:#000; }
+/* the subtle "alt" section glow still reads on black — keep it, just a touch softer */
+body.theme-black .section.alt::before{
+  background:radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.06) 0%, transparent 55%);
+}
+/* hero + card fills that used the navy token: nudge toward black so they sit on pure black */
+body.theme-black .hero{ background:#000; }
