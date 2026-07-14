@@ -2322,7 +2322,7 @@ body{
 
 
 /* ============================================================= */
-/* HOMEPAGE-ONLY BLACK THEME (scoped) — compare vs default navy  */
+/*/* BLACK THEME (scoped via body.theme-black) — canvas black, panels navy */
 /* ============================================================= */
 body.theme-black{ background:#000; }
 /* base dark sections + footer become true black; white section untouched */
