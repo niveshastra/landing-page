@@ -1491,7 +1491,7 @@ body{
 /* ============================================================= */
 .page-hero{
   position:relative;
-  padding:160px 32px 56px;
+  padding:160px 32px 0;
   text-align:center;
   overflow:hidden;
 }
@@ -1519,10 +1519,10 @@ body{
   color:var(--text-secondary);
   line-height:1.65;
   max-width:680px;
-  margin:0 auto 40px;
+  margin:0 auto 32px;
 }
 @media (max-width:768px){
-  .page-hero{ padding:120px 20px 40px; }
+  .page-hero{ padding:120px 20px 0; }
 }
 
 /* full-width establishing screenshot under the banner */
