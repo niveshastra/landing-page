@@ -2301,3 +2301,15 @@ body{
   text-align:center; margin-top:42px;
   font-size:14px; color:var(--text-muted);
 }
+
+/* Hero CTAs moved below the hero image */
+.hero-ctas-below{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  margin:8px auto 0;
+  flex-wrap:wrap;
+}
+/* De-linked buttons (private until payment gateway) keep look, drop pointer */
+.nav-cta[aria-disabled="true"],
+.btn-primary[aria-disabled="true"]{ cursor:default; }
